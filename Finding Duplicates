@@ -1,0 +1,21 @@
+#a program to find the number of times an item has appeared in an array
+locations = ["New York", "Quatar", "Japan", "Hawai", "Quatar", "Toronto", "California", "Paris"]
+
+target = "Quatar"
+
+#function
+def search(locations, target):
+    matches = []
+    for i in range(len(locations)):
+        if locations[i] == target:
+            matches.append(i)
+    if not matches:
+        ValueError("Target Location is not in the list.")
+    else:
+        return matches
+
+result = search(locations, target)
+
+print(locations)
+print("Target: ", target)
+print("{} is present in the list in the following indexes: {}".format(target, result))
