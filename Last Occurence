@@ -1,0 +1,12 @@
+def last_index (arr, target):
+    last_index = -1
+    for i in range(len(arr)):
+        if arr[i] == target:
+            last_index = i
+    print(last_index)
+    
+arr = [9, 20, 54, 70, 80, 20, 54]
+target = 20
+print(arr)
+print("Target: ", target)
+print("Last index of target: ",last_index(arr, target))
