@@ -1,0 +1,25 @@
+#binary search with recursion
+print("Binary Search with Recursion.\n")
+
+def binarySearch(arr, l, r, x): 
+    #arr = array,  l = left, r= right, x= target value
+    while l<=r:
+        mid = l + (r - l) // 2
+        if arr[mid] == x:
+            return mid
+        elif (arr[mid] > x):
+            return binarySearch(arr, 1, mid-1, x)
+        else:
+            return binarySearch(arr, mid+1, r, x)
+    return -1
+
+arr = [0, 9, 14, 54, 98, 112, 250, 360, 450, 500, 670, 845]
+x = 360
+result = binarySearch(arr, 0, len(arr)-1, x)
+
+print("Array: ",arr)
+print("Target Number: ",x)
+if result != -1:
+    print("The number {} is presunt in the array at index: {}".format(x, result))
+else:
+    print("The number ",x," is not present in the array.")
