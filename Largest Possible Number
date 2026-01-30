@@ -1,0 +1,20 @@
+# program to find the largest possible number-order
+
+#built in function
+def compare(n1, n2):
+    return str(n1) + str(n2) > str(n2) + str(n1)
+    
+#function for sorting in descending order
+def LargestNumber(arr):
+    for i in range(len(arr), 0, -1):
+        tmp = 0
+        for j in range(i):
+            if not compare(arr[j], arr[tmp]):
+                tmp = j
+        arr[tmp], arr[i-1] = arr[i-1], arr[tmp]
+    return str(int("".join(map(str, arr))))
+    
+
+arr = [5, 7, 6, 8, 3, 1]
+print("Array: ", arr)
+print("Largest Possible Number (from the array) :", LargestNumber(arr))
