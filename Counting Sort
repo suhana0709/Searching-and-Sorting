@@ -1,0 +1,20 @@
+#Counting Sort
+def sortZeroAndOne(a, n):
+    #counting no. of 0's
+    count = 0
+    for i in range (0, n):
+        if (a[i]==0):
+            count+=1
+    #filling the a, (array) with 0 till count
+    for i in range(0, count):
+        a[i]=0
+    #filling the remaining space with 1
+    for i in range(count, n):
+        a[i] = 1
+
+#Array
+a = [1, 0, 1, 1, 0, 1, 0, 0]
+n = len(a)
+print("Given Array: ",a)
+sortZeroAndOne(a,n)
+print("Sorted Array:",a)
