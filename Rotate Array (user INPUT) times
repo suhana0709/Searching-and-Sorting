@@ -1,0 +1,25 @@
+#program to rotate an array 'n' times
+#input: array, lenght, 'n' times (rotate)
+
+def rotation(a, n, a_size):
+    for i in range(n):
+        rotate(a, a_size)
+        
+#rotate array to the left by one place
+def rotate(a, a_size):
+    temp = a[0]
+    for i in range(a_size-1):
+        a[i] = a[i+1]
+    a[a_size-1] = temp
+def printArray(a, a_size):
+    for i in range(a_size):
+        print("% d" % a[i], end=" ")
+    print("\n")
+    
+a = [4, 5, 6, 7, 8, 9, 0]
+print("Array:-")
+printArray(a, len(a))
+r = int(input("Enter the number of rotation: "))
+rotation(a, r, len(a))
+print("New Array:-")
+printArray(a, len(a))
