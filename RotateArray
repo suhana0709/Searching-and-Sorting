@@ -17,3 +17,7 @@ def printArray(a, a_size):
     print("\n")
     
 a = [4, 5, 6, 7, 8, 9, 0]
+
+printArray(a, len(a))
+rotation(a, 3, len(a))
+printArray(a, len(a))
